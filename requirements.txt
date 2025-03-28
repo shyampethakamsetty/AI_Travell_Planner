@@ -16,4 +16,4 @@ requests==2.31.0
 beautifulsoup4==4.12.3
 aiohttp==3.9.3
 anyio==4.2.0
-httpx==0.25.2 
+httpx==0.24.1 
