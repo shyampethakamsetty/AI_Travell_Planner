@@ -1,468 +1,221 @@
 /* Modern Premium Dark Travel Planner Theme */
 :root {
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --secondary: #a5b4fc;
     --background: #0f172a;
     --surface: #1e293b;
-    --surface-dark: #172033;
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --text: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border: #334155;
     --error: #ef4444;
     --success: #22c55e;
-    --text: #f8fafc;
-    --text-light: #cbd5e1;
-    --border: #334155;
-    --hover: #2d3a54;
-    --gradient-start: #4f46e5;
-    --gradient-end: #6366f1;
+    --warning: #f59e0b;
 }
 
 /* Base Styles */
 .stApp {
-    background: var(--background);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--background);
     color: var(--text);
 }
 
-/* Header Styling */
+/* Header Styles */
 .main-header {
-    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-    color: white;
-    padding: 4rem 6rem;
-    margin: -6rem -4rem 3rem -4rem;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
     position: relative;
-    overflow: hidden;
-}
-
-.main-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff10" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-    background-size: cover;
-    opacity: 0.1;
+    border-bottom: 1px solid var(--border);
 }
 
 .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
     position: relative;
     z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .header-title {
     max-width: 800px;
+    margin: 0 auto;
 }
 
 .header-title h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 800;
-    margin: 0;
-    background: linear-gradient(to right, #ffffff, #e0e7ff);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;
 }
 
 .header-title p {
-    font-size: 1.5rem;
-    opacity: 0.9;
-    margin: 1.5rem 0 0 0;
-    font-weight: 400;
-    color: #e2e8f0;
-    letter-spacing: 0.01em;
-}
-
-/* Step Header */
-.step-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--border);
-}
-
-.step-header h2 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin: 0;
-    color: var(--text);
-    background: linear-gradient(to right, #60a5fa, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Subsection Headers */
-h3 {
     font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Form Styles */
+.form-container {
+    background-color: var(--surface);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem;
+}
+
+/* Input and Select Styles */
+.stSelectbox, .stTextInput, .stDateInput {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.stSelectbox select, .stTextInput input, .stDateInput input {
+    background-color: var(--surface);
+    color: var(--text);
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.stSelectbox select option {
+    background-color: var(--surface);
+    color: var(--text);
+}
+
+/* Button Styles */
+.stButton button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
     font-weight: 600;
-    color: var(--text);
-    margin: 2rem 0 1rem 0;
-    position: relative;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
-/* Remove the decorative line */
-h3::before {
-    display: none;
-}
-
-/* Add some subtle styling to make headers stand out */
-.itinerary-container h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--text);
-    margin: 1.5rem 0 1rem 0;
-    background: linear-gradient(to right, var(--text), var(--text-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 0.01em;
-}
-
-/* Animation for headers */
-.step-header, h3 {
-    animation: fadeSlideIn 0.5s ease-out;
-}
-
-@keyframes fadeSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.stButton button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Progress Bar */
 .progress-container {
-    background: var(--surface);
-    padding: 2rem 3rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.progress-container::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--border);
-    transform: translateY(-50%);
-    z-index: 0;
+    margin: 2rem 0;
+    padding: 0 1rem;
 }
 
 .progress-step {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    color: var(--text-light);
-    font-weight: 500;
+    flex: 1;
     position: relative;
+    padding: 0 1rem;
+}
+
+.progress-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--border);
     z-index: 1;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
 }
 
-.progress-step:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.progress-step.active {
-    color: var(--primary);
-    background: rgba(99, 102, 241, 0.1);
-}
-
-.progress-step .step-number {
-    width: 36px;
-    height: 36px;
+.step-number {
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
-    background: var(--surface-dark);
+    background-color: var(--surface);
     border: 2px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s ease;
+    color: var(--text-secondary);
+    position: relative;
+    z-index: 2;
 }
 
 .progress-step.active .step-number {
-    background: var(--primary);
+    background-color: var(--primary);
     border-color: var(--primary);
     color: white;
-    box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.2);
 }
 
-/* Form Elements */
-.form-container {
-    background: var(--surface);
-    padding: 2.5rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    margin-bottom: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.step-label {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-align: center;
 }
 
-/* Input Fields */
-.stTextInput > div > div > input,
-.stSelectbox > div > div,
-.stDateInput > div > div > input,
-.stMultiselect > div > div {
-    background: var(--surface-dark) !important;
-    border: 1px solid var(--border) !important;
-    color: var(--text) !important;
-    border-radius: 8px !important;
-    padding: 0.75rem 1rem !important;
-    font-size: 1rem !important;
-    transition: all 0.2s ease !important;
+.progress-step.active .step-label {
+    color: var(--primary);
 }
 
-.stTextInput > div > div > input:focus,
-.stSelectbox > div > div:focus,
-.stDateInput > div > div > input:focus {
-    border-color: var(--primary) !important;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2) !important;
-}
-
-/* Buttons */
-.stButton > button {
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 0.75rem 1.5rem;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-}
-
-.stButton > button:hover {
-    background: var(--primary-dark);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
-}
-
-/* Sidebar */
-.stSidebar {
-    background: var(--surface);
-    padding: 2rem;
-    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
-}
-
-.stSidebar .sidebar-content {
-    padding: 1rem;
-}
-
-/* Expander */
-.stExpander {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    transition: all 0.2s ease;
-    background: var(--surface);
-}
-
-.stExpander:hover {
-    border-color: var(--primary);
-    background: var(--hover);
-}
-
-.stExpander > div:first-child {
-    background: var(--surface-dark);
-    padding: 1rem 1.5rem;
-    font-weight: 500;
-}
-
-/* Messages */
-.stSuccess, .stInfo, .stWarning, .stError {
-    border-radius: 12px;
-    padding: 1.25rem 2rem;
-    margin: 1.5rem 0;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-weight: 500;
-    animation: slideIn 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-10px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.stSuccess {
-    background: rgba(34, 197, 94, 0.1);
-    color: #4ade80;
-    border-color: rgba(34, 197, 94, 0.2);
-}
-
-.stError {
-    background: rgba(239, 68, 68, 0.1);
-    color: #f87171;
-    border-color: rgba(239, 68, 68, 0.2);
-}
-
-/* Navigation buttons */
+/* Navigation Buttons */
 .nav-buttons {
-    position: fixed;
-    bottom: 2rem;
-    left: 0;
-    right: 0;
-    padding: 0 2rem;
-    z-index: 100;
-}
-
-.nav-buttons .stButton > button {
-    background: var(--surface-dark);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    letter-spacing: 0.01em;
-}
-
-.nav-buttons .stButton > button:hover {
-    background: var(--hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-color: var(--primary);
-}
-
-/* Form submit button styling */
-.stFormSubmitButton > button {
-    background: var(--surface-dark) !important;
-    color: var(--text) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 12px !important;
-    padding: 1rem 2rem !important;
-    font-size: 1rem !important;
-    font-weight: 500 !important;
-    transition: all 0.3s ease !important;
-    width: 100% !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-    letter-spacing: 0.01em !important;
-}
-
-.stFormSubmitButton > button:hover {
-    background: var(--hover) !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
-    border-color: var(--primary) !important;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
 }
 
 /* Itinerary Container */
 .itinerary-container {
-    background: var(--surface);
+    background-color: var(--surface);
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    margin-bottom: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin: 2rem 0;
     color: var(--text);
+    line-height: 1.6;
 }
 
 /* Modification Section */
 .modification-section {
-    background: var(--surface);
+    background-color: var(--surface);
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    margin: 2rem 0 4rem 0;
+    border-radius: 1rem;
+    margin-top: 2rem;
 }
 
 .modification-section h3 {
-    margin: 0 0 1.5rem 0;
-    font-size: 1.25rem;
-    font-weight: 600;
     color: var(--text);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
 }
 
 .modification-buttons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-header {
-        margin: -2rem -1rem 1rem -1rem;
-        padding: 2rem;
-    }
-    
-    .header-title h1 {
-        font-size: 2.5rem;
-    }
-    
-    .header-title p {
-        font-size: 1.25rem;
-    }
-    
-    .progress-container {
-        padding: 1.5rem;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .progress-container::before {
-        display: none;
-    }
-    
-    .form-container {
-        padding: 1.5rem;
-    }
-    
-    .nav-buttons {
-        padding: 1rem;
-    }
-    
-    .nav-buttons button {
-        min-width: auto;
-    }
-    
-    .modification-buttons {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--surface-dark);
+    background: var(--surface);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -471,107 +224,109 @@ h3::before {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--secondary);
+    background: var(--primary);
 }
 
-/* Override Streamlit's default white backgrounds */
-.stMarkdown, .stText {
-    color: var(--text) !important;
+/* Error and Success Messages */
+.stAlert {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
 }
 
-div[data-testid="stToolbar"] {
-    background: var(--surface) !important;
+.stAlert[data-baseweb="notification"] {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
 }
 
-div[data-testid="stDecoration"] {
-    background: var(--border) !important;
+/* Dropdown Menu */
+.stSelectbox [data-baseweb="select"] {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
 }
 
-div[data-testid="stStatusWidget"] {
-    background: var(--surface) !important;
-    color: var(--text) !important;
+.stSelectbox [data-baseweb="select"]:hover {
+    border-color: var(--primary);
 }
 
-/* Additional dark theme overrides */
-.stSelectbox > div > div {
-    background: var(--surface-dark) !important;
-    border: 1px solid var(--border) !important;
-    color: var(--text) !important;
+/* Form Labels */
+.stMarkdown {
+    color: var(--text);
 }
 
-.stSelectbox > div > div > div[data-baseweb="select"] {
-    background: var(--surface-dark) !important;
-    color: var(--text) !important;
+/* Expander */
+.stExpander {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-.stSelectbox > div > div > div[data-baseweb="select"] > div {
-    background: var(--surface-dark) !important;
-    color: var(--text) !important;
+.stExpanderHeader {
+    color: var(--text);
+    padding: 1rem;
 }
 
-/* Dropdown options */
-div[role="listbox"] {
-    background: var(--surface-dark) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+/* Sidebar */
+.css-1d391kg {
+    background-color: var(--surface);
 }
 
-div[role="option"] {
-    background: var(--surface-dark) !important;
-    color: var(--text) !important;
-    padding: 0.75rem 1rem !important;
-    transition: all 0.2s ease !important;
+/* Ensure text is visible in all components */
+.stMarkdown, .stText, .stSelectbox label, .stDateInput label {
+    color: var(--text);
 }
 
-div[role="option"]:hover {
-    background: var(--hover) !important;
+/* Fix for dropdown text visibility */
+.stSelectbox select option {
+    background-color: var(--surface);
+    color: var(--text);
 }
 
-div[role="option"][aria-selected="true"] {
-    background: var(--primary) !important;
-    color: white !important;
+/* Ensure form inputs have proper contrast */
+.stTextInput input, .stDateInput input {
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
 }
 
-/* Selected value */
-div[data-baseweb="select"] > div > div > div {
-    color: var(--text) !important;
+/* Fix for multiselect text visibility */
+.stMultiSelect [data-baseweb="select"] {
+    background-color: var(--surface);
+    color: var(--text);
 }
 
-/* Override any default select colors */
-select, option {
-    background-color: var(--surface-dark) !important;
-    color: var(--text) !important;
+/* Ensure proper spacing between elements */
+.stMarkdown + .stMarkdown {
+    margin-top: 1rem;
 }
 
-/* Selected text color override */
-.stSelectbox div[data-baseweb="select"] span {
-    color: var(--text) !important;
+/* Fix for button text contrast */
+.stButton button {
+    color: white;
+    font-weight: 600;
 }
 
-/* Header styles for steps */
-.stMarkdown h1, .element-container div[data-testid="stHeader"] {
-    font-size: 2rem !important;
-    font-weight: 700 !important;
-    color: var(--text) !important;
-    margin-bottom: 2.5rem !important;
-    background: linear-gradient(to right, var(--secondary), var(--primary)) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    animation: fadeSlideIn 0.5s ease-out !important;
-    letter-spacing: -0.02em !important;
-    padding-bottom: 0 !important;
-    border-bottom: none !important;
+/* Ensure proper contrast for error messages */
+.stAlert[data-baseweb="notification"] {
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--error);
 }
 
-/* Animation for headers */
-@keyframes fadeSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Fix for success messages */
+.stSuccess {
+    background-color: var(--surface);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+/* Ensure proper contrast for warning messages */
+.stWarning {
+    background-color: var(--surface);
+    color: var(--warning);
+    border: 1px solid var(--warning);
 } 
